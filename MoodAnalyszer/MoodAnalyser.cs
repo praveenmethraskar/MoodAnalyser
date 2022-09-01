@@ -19,17 +19,26 @@ namespace MoodAnalyszer
 
         public string Moodanalyse()
         {
-            if (Mood.ToLower().Contains("sad"))
+            try
             {
-                Console.WriteLine("Sad");
-                return "Sad";
+                if (Mood.ToLower().Contains("sad"))
+                {
+                    Console.WriteLine("Sad");
+                    return "Sad";
+                }
+
+                else
+                {
+                    Console.WriteLine("Happy");
+                    return "Happy";
+                }
+            }
+            catch (InvalidCastException ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
-            else
-            {
-                Console.WriteLine("Happy");
-                return "Happy";
-            }
+            return default(string);
         }
     }
 }
