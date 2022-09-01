@@ -11,9 +11,10 @@ namespace MoodAnalyszer
         public static void Main(string[] args)
         {
 
-            MoodAnalyser obj = new MoodAnalyser();
-            obj.Moodanalyse(Happy_Mood);
-            obj.Moodanalyse(Sad_Mood);
+            MoodAnalyser obj = new MoodAnalyser(Happy_Mood);
+            obj.Moodanalyse();
+            MoodAnalyser obj1 = new MoodAnalyser(Sad_Mood);
+            obj1.Moodanalyse();
 
 
         }
